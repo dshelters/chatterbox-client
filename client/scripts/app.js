@@ -4,7 +4,8 @@ $( document ).ready( function() {
   window.app = {};
 
   app.init = function () {
-
+    app.handleUsernameClick();
+    app.handleSubmit();
   };
 
   app.send = function (message) {
@@ -54,9 +55,10 @@ $( document ).ready( function() {
 
 
 // create chat class as outer div
-    var $chat = $('<div class ="chat"><span class="message"></span><br><span class="username"></span></div>');
-    $('.message').text(message.text);
-    $('.username').text(message.username);
+    var $chat = $('<div class ="chat"><br><span class="username"></span><br><span class="message"></span></div>');
+    $chat.prependTo('#chats');  
+    $('.message').first().text(message.text);
+    $('.username').first().text(message.username);
 
 // create div with room class
 //     var $chatroom = $('<span class="chatroom"</span>');
@@ -76,7 +78,6 @@ $( document ).ready( function() {
 //     $users.appendTo($message);
 //     $chatroom.appendTo($message);
 
-    $chat.appendTo('#chats');  
 
   };
 
@@ -91,6 +92,9 @@ $( document ).ready( function() {
       $(this).css('background-color', 'yellow');
 
     });
+  };
+
+  app.handleSubmit = function(message) {
   };
 
   app.server = 'http://parse.sfm8.hackreactor.com';
