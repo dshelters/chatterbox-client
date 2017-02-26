@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>chatterbox</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="" ="styles/styles.css">
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -28,19 +28,30 @@
       <h1>chatterbox</h1>
 
       <!-- Your HTML goes here! -->
-      <span>Room</span>  
-      <select name="select">
-        <option value="lobby" selected>lobby</option> 
-        <option value="testing">testing</option>
-        <option value="roomname">room name</option>
-      </select>
+      <div>Room
+        <select name="roomSelect">
+        </select>
+
+
+        <form action="#" id="send" method="post">
+        Send a Message
+          <input type="text" name="message" id="message"/>
+          <input type="submit" name="submit" class="submit"/>
+        </form>    
+      </div>
+
       <div class="users">Users</div>
-      <div>Send Message</div>
-        <input type="message" name="message">
-        <button>Send</button>
+
     </div>
     <div id="chats">
     </div>
+    
+    <script>
+      $(function(){
+        app.init()
+      });
+    </script>
+    
   </body>
   <script type="text/javascript" src="scripts/app.js"></script>
 </html>
